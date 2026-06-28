@@ -29,3 +29,28 @@
         ]
     });
 }
+
+const openBtn = document.querySelector('.js-openTrailer');
+const modal = document.querySelector('#trailerModal');
+const closeBtn = document.querySelector('.modal__close');
+const overlay = document.querySelector('.modal__overlay');
+const video = document.querySelector('#trailerVideo');
+
+openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    modal.classList.add('active');
+
+    video.currentTime = 0;
+    video.play();
+});
+
+function closeModal() {
+    modal.classList.remove('active');
+
+    video.pause();
+    video.currentTime = 0;
+}
+
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
