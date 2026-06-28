@@ -52,17 +52,21 @@ main
     margin-top: 24px;
 }
 
-.scenePhotos {
-  display: flex;
-  width: 100%;
-  margin-top: 24px;
+.scenePhotos{
+    display:flex;
+    justify-content:center;
+    margin-top:24px;
 }
 
-.scenePhoto {
-  width: 50%;
-  aspect-ratio: 188 / 106;
-  object-fit: cover;
-  display: block;
+.scenePhoto{
+    width:100%;
+    max-width:360px;
+}
+
+.scenePhoto img{
+    display:block;
+    width:100%;
+    height:auto;
 }
 
 /* INTRODUCTION pc */
@@ -84,12 +88,14 @@ main
         margin-top: 32px;
     }
 
-    .scenePhotos {
-        display: flex;
-        max-width: 1280px;
-        margin: 0 auto;
-        margin-top: 32px;
-        padding: 0 160px;
+    .scenePhotos{
+        justify-content:center;
+        margin-top:32px;
+    }
+
+    .scenePhoto{
+        width:100%;
+        max-width:720px;
     }
 }/* pc 769px */
 
@@ -238,6 +244,168 @@ main
         margin-top: 32px;
     }
 }/* pc 769px */
+
+/*====================
+PROJECT
+====================*/
+
+.section--project{
+    background: linear-gradient(180deg,#580200 0%,#8E0000 50%,#580200 100%);
+}
+
+.project{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.project__item{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(0,0,0,.35);
+    overflow:hidden;
+}
+
+.project__image{
+    aspect-ratio:16/9;
+}
+
+.project__content{
+    padding:20px;
+}
+
+.project__number{
+    color:#FBE705;
+    font-family:"Quantico",sans-serif;
+    font-size:1.4rem;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.project__name{
+    margin-top:8px;
+    font-size:2.2rem;
+    font-weight:700;
+}
+
+.project__txt{
+    margin-top:16px;
+    font-size:1.4rem;
+    line-height:2;
+}
+
+.project__item .btn{
+    margin-top:20px;
+}
+
+@media screen and (min-width:769px){
+
+    .project{
+        margin-top:40px;
+        gap:48px;
+        max-width:1100px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .project__item{
+        display:grid;
+        grid-template-columns:45% 55%;
+        align-items:center;
+        gap:32px;
+        padding:20px;
+    }
+
+    .project__image{
+        padding:0;
+    }
+
+    /* .project__image img{
+        width:90%;
+        height:auto;
+        object-fit:contain;
+    } */
+
+    .project__image img{
+        display:block;
+        width:100%;
+        height:auto;
+        object-fit:cover;
+    }
+
+    .project__content{
+        padding:40px;
+    }
+
+    .project__number{
+        font-size:2rem;
+    }
+
+    .project__name{
+        font-size:3.2rem;
+        margin-top:10px;
+    }
+
+    .project__txt{
+        font-size:1.8rem;
+        margin-top:24px;
+    }
+
+    .project__item .btn{
+        margin:32px 0 0;
+    }
+}
+
+/*====================
+MODAL
+====================*/
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal__overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.85);
+}
+
+.modal__content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    width:min(90vw,960px);
+}
+
+.modal__content video{
+    width:100%;
+    display:block;
+}
+
+.modal__close{
+    position:absolute;
+    top:-40px;
+    right:0;
+
+    font-size:4rem;
+    color:#fff;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
 
 
 /* ABOUT & WORKS */
