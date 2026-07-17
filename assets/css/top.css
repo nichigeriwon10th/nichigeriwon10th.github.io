@@ -121,8 +121,11 @@ main
     }
 
     .story__txt {
+        max-width: 900px;
+        margin: 32px auto 0;
+        text-align: center;
         font-size: 1.8rem;
-        margin-top: 32px;
+        line-height: 2;
     }
 
     .slider {
@@ -158,6 +161,10 @@ main
 .character__content {
     padding: 16px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .character__name {
@@ -216,6 +223,10 @@ main
 
     .character__txt {
         font-size: 1.6rem;
+    }
+
+    .character__content {
+        min-height: 140px;
     }
 }/* pc 769px */
 
